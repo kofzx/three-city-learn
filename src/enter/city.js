@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { SurroundLine } from '../effect/surroundLine.js';
 import {Background} from "../effect/background.js";
 import * as TWEEN from "@tweenjs/tween.js";
+import { Radar } from '../effect/radar.js'
 
 export class City {
     constructor(scene, camera) {
@@ -37,6 +38,8 @@ export class City {
 
     initEffect() {
         new Background(this.scene);
+
+        new Radar(this.scene, this.time);
 
         this.addClick()
     }
